@@ -1,0 +1,45 @@
+.size(@w: auto; @h: auto) {
+	width: @w;
+	height: @h;
+}
+@transition: .3s all cubic-bezier(0.68, 0.06, 0.58, 1);
+.full-width {
+	width: 100%;
+}
+html, body {
+	height: 100%;
+}
+body {
+	background: url('../img/body-bg.jpg') center center;
+}
+.center-block {
+	margin-left: auto;
+	margin-right: auto;
+}
+.sticky-page {
+	min-height: 100%;
+}
+.margin-section {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.shadow {
+	box-shadow: 0px 4px 5px #e9e8e8;
+}
+.bg-white {
+	background: #fff;
+	&-gradient {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+100 */
+		background: #ffffff; /* Old browsers */
+		background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
+	}
+}
+.offset-padding {
+	padding: 25px 10px;
+}
+.rounded {
+	border-radius: 6px;
+}

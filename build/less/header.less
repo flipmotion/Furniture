@@ -1,0 +1,168 @@
+.header {
+	margin-bottom: 10px;
+	&-lvl {
+		&-1 {
+			padding: 30px 0;
+			.call-phone {
+				margin-top: -8px;
+				display: inline-block;
+				.rc;
+				font-weight: 700;
+				vertical-align: middle;
+				padding: 4px 10px 2px;
+				border-radius: 5px;
+				transition: @transition;
+				&:hover,&:focus {
+					background: #333;
+					a {
+						color: #fff;
+					}
+				}
+				span:first-child {
+					margin-right: 5px;
+				}
+				a {
+					color: #333;
+					&:hover,&:focus {
+						text-decoration: none;
+					}
+				}
+			}
+			button,
+			input {
+				height: 25px;
+			}
+			button {
+				padding: 2px 5px 0;
+			}
+			input {
+				width: 130px;
+				margin-right: 3px;
+			}
+			.form-group {
+				margin-bottom: 0;
+			}
+			.search {
+				display: inline-block;
+			}
+		}
+		&-2 {
+			.fixed-height {
+				ul {
+					height: 90px;
+				}
+			}
+			.my-navigation {
+				ul {
+					margin-bottom: 0;
+					padding: 0;
+				}
+				span {
+					padding-top: 5px;
+				}
+				li {
+					font-size: 16px;
+					flex-grow: 1;
+					width: 100%;
+					text-align: center;
+					display: flex;
+					justify-content: center;
+
+					//align-items: center;
+					a {
+						transition: @transition;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						padding: 0 10px;
+						width: 100%;
+						flex-grow: 1;
+						&:hover,&:focus {
+							color: #fff;
+							/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2e2e2e+0,262626+100 */
+							background: #2e2e2e; /* Old browsers */
+							background: -moz-linear-gradient(top,  #2e2e2e 0%, #262626 100%); /* FF3.6-15 */
+							background: -webkit-linear-gradient(top,  #2e2e2e 0%,#262626 100%); /* Chrome10-25,Safari5.1-6 */
+							background: linear-gradient(to bottom,  #2e2e2e 0%,#262626 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e2e2e', endColorstr='#262626',GradientType=0 ); /* IE6-9 */
+						}
+					}
+					&:first-child {
+						a {
+							border-top-left-radius: 6px;
+							border-bottom-left-radius: 6px;
+						}
+					}
+					&:last-child {
+						a {
+							border-top-right-radius: 6px;
+							border-bottom-right-radius: 6px;
+						}
+					}
+				}
+				
+				&.gradient {
+					box-shadow: 1px 5px 5px #e9e8e8;
+					background: #ffffff; /* Old browsers */
+					background: -moz-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%); /* FF3.6-15 */
+					background: -webkit-linear-gradient(top,  #ffffff 0%,#f2f2f2 100%); /* Chrome10-25,Safari5.1-6 */
+					background: linear-gradient(to bottom,  #ffffff 0%,#f2f2f2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+					border-radius: 8px;
+					border-bottom: 1px solid #fff;
+				}
+				.has-inner {
+					position: relative;
+					&:hover,&:focus {
+						.my-navigation {
+							display: block;
+						}
+					}
+					.my-navigation {
+						position: absolute;
+						top: 95%;
+						z-index: 2;
+						left: 0;
+						right: 0;
+						display: none;
+						ul {
+							flex-direction: column;
+							height: auto;
+							margin: 5px 0;
+							padding: 10px 0;
+							border-radius: 6px; 
+							/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2e2e2e+0,262626+100 */
+							background: #2e2e2e; /* Old browsers */
+							background: -moz-linear-gradient(top,  #2e2e2e 0%, #262626 100%); /* FF3.6-15 */
+							background: -webkit-linear-gradient(top,  #2e2e2e 0%,#262626 100%); /* Chrome10-25,Safari5.1-6 */
+							background: linear-gradient(to bottom,  #2e2e2e 0%,#262626 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e2e2e', endColorstr='#262626',GradientType=0 ); /* IE6-9 */
+						}
+						li {
+							display: block;
+							margin: 0;
+							border-bottom: 1px dotted #4A4A4A;
+							&:last-child {
+								border: none;
+							}
+							a {
+								transition: @transition;
+								color: #7e7d7d;
+								padding: 5px;
+								font-weight: 400;
+								font-size: 13px;
+								border-radius: 0;
+								font-family: Arial;
+								&:hover,&:focus {
+									color: #fff;
+									font-weight: bold;
+									background: 0 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
