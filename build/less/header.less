@@ -45,6 +45,89 @@
 			.search {
 				display: inline-block;
 			}
+			.dropdown {
+				li {
+					margin: 0;
+				}
+				.dropdown-title {
+					color: #333;
+					font-family: Arial;
+					font-weight: 400;
+					font-size: 14px;
+					text-transform: lowercase;
+					margin: 10px 0;
+				}
+				.dropdown-menu {
+					display: none;
+					min-width: 280px;
+				}
+				&.open > .dropdown-menu {
+					display: block;
+				}
+				.btn {
+					color :#fff;
+				}
+				.order {
+					padding: 0px 20px 10px;
+				}
+				.total-price {
+					padding: 10px 20px 0;
+					font-size: 18px;
+					span {
+						font-size: 21px;
+						color: #fe9d04;
+					}
+				}
+				.item {
+					padding: 10px;
+					background: #ffffff; /* Old browsers */
+					background: -moz-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%); /* FF3.6-15 */
+					background: -webkit-linear-gradient(top,  #ffffff 0%,#f2f2f2 100%); /* Chrome10-25,Safari5.1-6 */
+					background: linear-gradient(to bottom,  #ffffff 0%,#f2f2f2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+					display: flex;
+					.delete {
+						width: 11px;
+						height: 11px;
+						display: inline-block;
+						background: url(../img/cart_close.png) center top no-repeat;
+						//margin-right: -8px;
+						&:hover,&:focus {
+							background-position: bottom center;
+						}
+					}
+					&>div {
+						&:first-child {
+							img {
+								width: 80px;
+							}
+						}
+						&:nth-child(2) {
+							padding-left: 10px;
+							padding-right: 10px;
+							flex-grow: 1;
+						}
+					}
+					&-name {
+						font-family: Arial;
+						font-weight: 400;
+						font-size: 13px;
+						text-transform: lowercase;
+					}
+					&-total {
+						font-family: Arial;
+						font-weight: 400;
+						font-size: 13px;
+						text-transform: lowercase;
+					}
+					&-price {
+						color: #fe9d04;
+						font-size: 14px;
+						.rc;
+					}
+				}
+				
+			}
 		}
 		&-2 {
 			.fixed-height {
@@ -169,6 +252,7 @@
 					}
 				}
 			}
+			
 		}
 	}
 }
