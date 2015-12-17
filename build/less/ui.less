@@ -220,3 +220,36 @@
 	}
 }
 /*form-control END*/
+.bread-crumbs {
+	ul {
+		list-style-type: none;
+		padding: 0;
+		//font-size: 12px;
+		li {
+			display: inline-block;
+			vertical-align: middle;
+			&:last-child {
+				&:after {
+					content: none;
+				}
+				a {
+					pointer-events: none;
+					color: #333;
+				}
+			}
+			&:after {
+				content: '/';
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 5px;
+				.rc;
+				font-weight: bold;
+			}
+			a {
+				//color:#333;
+				.rc;
+				font-weight: bold;
+			}
+		}
+	}
+}
