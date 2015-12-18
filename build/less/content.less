@@ -515,12 +515,23 @@
 }
 /*card*/
 .card {
+	&-table {
+		//margin-top: 15px;
+	}
 	&-review {
 		p {
 			margin-bottom: 0;
+			font-size: 11px;
 		}
 		hr {
 			margin: 10px 0;
+		}
+		table tr td {
+			padding: 5px;
+			vertical-align: middle;
+		}
+		a {
+			color: #7e7d7d;
 		}
 	}
 	&-overview {
@@ -578,7 +589,7 @@
 				color: #a5a5a5;
 			}
 			.input-group {
-				width: 80px;
+				width: 60px;
 				margin: 0 0 0 10px;
 			}
 		}
