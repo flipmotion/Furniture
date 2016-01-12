@@ -1,6 +1,63 @@
+.quant {
+	display: none !important;
+}
 .my {
 	&-flex {
 		display: flex;
+	}
+	&-filter {
+		.title-cat {
+			h3 {
+				margin-top: 0;
+				margin-bottom: 25px;
+				text-align: center;
+			}
+		}
+	}
+	&-filter form {
+		.bx-filter-parameters-box-title {
+			display: flex;
+			justify-content: space-between;
+			align-items:center;
+			padding: 5px 10px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			cursor: pointer;
+			//border-radius: 4px;
+			box-shadow: 0 1px 1px rgba(0,0,0,0.05), 0 0 30px 0 #F5F5F5 inset;
+			margin-bottom: 10px;
+			span {
+				flex-grow: 1;
+				pointer-events: none;
+				color: #7c7c7c;
+				.rc;
+				text-transform: uppercase;
+				font-weight: 700;
+				//font-size: 14px;
+			}
+		}
+		.bx-filter-block {
+			background: #f7f7f7;
+			border: 1px solid #ddd;
+			padding: 10px;
+			margin-top: -11px;
+			margin-bottom: 10px;
+			height: auto !important;
+		}
+		.bx-filter-button-box .bx-filter-parameters-box-container {
+			display: flex;
+			justify-content: space-between;
+			padding-bottom: 0;
+		}
+		.bx-filter-parameters-box-container {
+			padding-bottom: 0;
+		}
+		.bx-filter-block {
+			    margin-top: 0px;
+		}
+		.select-box {
+			//margin-bottom: -20px;
+		}
 	}
 	&-navigation {
 		/*base style*/

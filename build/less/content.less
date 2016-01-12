@@ -145,13 +145,14 @@
 				//width: 10%;
 				&:nth-child(2){
 					padding: 0 15px;
-					//width: 68%;
+					width: 100%;
 					flex-grow:1;
 				}
 				&:nth-child(3){
 					padding-left:15px;
 				}
 				&:first-child {
+					width: 220px;
 					a {
 						width: 100%;
 						padding: 10px;
@@ -306,6 +307,11 @@
 			}
 			&.grid {
 				flex-direction: column;
+				&>div {
+					&:nth-child(1) {
+						width: 100%;
+					}
+				}
 				.stock {
 					display: none;
 				}
@@ -322,7 +328,6 @@
 							display: none;
 						}
 					}
-
 				}
 				.btns {
 					display: flex;
@@ -616,17 +621,44 @@
 			}
 		}
 		.btns {
-			display: flex;
-			&>div {
-				&:nth-child(2) {
-					margin-left: 5px; 
+			&>div:last-child{
+				button {
+					margin-bottom: 0;
 				}
 			}
 			button {
+				width: 100%;
 				padding: 5px 10px 3px;
+				margin-bottom: 20px;
 			}
 		}
-		
+		.call-phone {
+			margin-top: 20px;
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			.rc;
+			font-weight: 700;
+			vertical-align: middle;
+			padding: 6px 10px 4px;
+			border-radius: 2px;
+			transition: @transition;
+			&:hover,&:focus {
+				background: #333;
+				a {
+					color: #fff;
+				}
+			}
+			span:first-child {
+				margin-right: 5px;
+			}
+			a {
+				color: #333;
+				&:hover,&:focus {
+					text-decoration: none;
+				}
+			}
+		}
 	}
 	&-desc {
 		p {
@@ -779,5 +811,56 @@
 	* {
 		visibility: hidden;
 		opacity: 0;
+	}
+}
+.modal {
+	.btn-light {
+		padding: 5px 10px 3px;
+	}
+	.modal-footer {
+		.my-flex {
+			justify-content: space-between;
+		}
+	}
+	.item-category-main {
+		margin-top: 0;
+		margin-bottom: 15px;
+	}
+	.modal-body {
+		padding-bottom: 0;
+	}
+	.item-category-main {
+		padding: 10px 10px;
+	}
+	.item-category-main>div:first-child {
+		width: 160px;
+	}
+	.item-category-main .description .item-desc {
+		    padding: 5px 0 5px;
+	}
+	h3 {
+		margin-top:0;
+	}
+	.modal-header {
+		.modal-title {
+			.rc;
+			font-weight: 700;
+			text-align: center;
+		}
+		p {
+			color: #999;
+			text-align: center;
+			font-style: italic;
+			font-size: 12px;
+			margin-bottom: 0;
+			margin-top: 5px;
+			a {
+				color: #333;
+				text-decoration: underline;
+				&:hover,&:focus {
+					text-decoration: none;
+				}
+			}
+		}
 	}
 }
