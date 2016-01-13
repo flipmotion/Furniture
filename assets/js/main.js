@@ -50,9 +50,16 @@ $(document).ready(function() {
 			send();
 		}
 	});
-
-	
+	btnTrigger();
 });
+function btnTrigger() {
+	var btn = $('.submit');
+	btn.on('click', function(e){
+		var btn = $(this).data('target'),
+			submit = $('[data-item="'+btn+'"]');
+			submit.click();
+	});
+}
 function send(){
 	var form = $('[data-form="send"]');
 	form.ajaxForm(function() {
