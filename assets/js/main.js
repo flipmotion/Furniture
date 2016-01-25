@@ -1,3 +1,8 @@
+(function(){
+	
+}());
+
+
 $(document).ready(function() {
 	/*scroll spy */
 	$("body").scrollspy({target: "#menu", offset:80});
@@ -9,6 +14,17 @@ $(document).ready(function() {
 		}, 1000);
 		return false;
 	});
+	window.onresize = resize;
+	window.onload = resize;
+	function resize(){
+		var windowsize = $(document).width();
+		if(windowsize <= 420 ) {
+			$('#OrderListFinal .item-category-main').addClass('grid');
+		}
+		else {
+			$('#OrderListFinal .item-category-main').removeClass('grid');
+		}
+	}
 	/*smooth links END*/
 	/*animation when scrolling*/
 	// $('.anim-el').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
@@ -22,7 +38,6 @@ $(document).ready(function() {
 	// 	}
 	// });
 	/*animation when scrolling*/
-
 	var owlMain = $('[data-item="slider-item"]');
 	owlMain.owlCarousel({
 		loop:true,
@@ -50,8 +65,19 @@ $(document).ready(function() {
 			send();
 		}
 	});
-	btnTrigger();
+	var compareBtn = $('[data-item="toggle-nav"]');
+	function compare(e){
+		$(this).parents('.compare-side').toggleClass('closed');
+		if($('.compare-side').has(e.target).length === 0) {
+			console.log(1);
+		}
+	};
+	compareBtn.on('click', compare);
 });
+$(document).on('click', '.alert-close', function() {
+	$(this).parent().slideUp();
+});
+
 function btnTrigger() {
 	var btn = $('.submit');
 	btn.on('click', function(e){
@@ -60,6 +86,7 @@ function btnTrigger() {
 			submit.click();
 	});
 }
+btnTrigger();
 function send(){
 	var form = $('[data-form="send"]');
 	form.ajaxForm(function() {
@@ -140,3 +167,77 @@ $(".input-number").keydown(function (e) {
         e.preventDefault();
     }
 });
+
+var item = document.querySelector('.item-category-preview');
+var items = document.querySelectorAll('.item-category-preview');
+var holder = document.querySelector('.inner');
+var itemWidth = item.clientWidth;
+var count = items.length;
+var widthHolder = count * itemWidth;
+var btnDel = $('[data-item="delete"]');
+var itemDel = $('[data-item="item"]');
+//width wrap
+var widthWrap = function(e) {
+	var item = document.querySelector('.item-category-preview');
+	var items = document.querySelectorAll('.item-category-preview');
+	var holder = document.querySelector('.inner');
+	var itemWidth = item.clientWidth;
+	var count = items.length;
+	var widthHolder = count * itemWidth;
+	var btnDel = $('[data-item="delete"]');
+	var itemDel = $('[data-item="item"]');
+	$('.holder-scroll .inner').css({
+		'width': widthHolder + 15
+	});
+}
+function tableHeight() {
+	var tr = $('.height-js');
+	var getH = $('.item-category-preview > div').height();
+	tr.height(getH + 20);
+}
+$(document).ready(tableHeight);
+/*navigation*/
+
+/*navigation end*/
+widthWrap();
+//width wrap end
+var deleteItem = function(e) {
+	var btn = $(this);
+	dataBtn = btn.data('item');
+	if(dataBtn == 'delete') {
+		$(this).parents('.item-category-preview').remove();
+	}
+	e.preventDefault();
+}
+btnDel.on('click', deleteItem);
+btnDel.on('click', widthWrap);
+//scroll events horizontal
+var holder = document.querySelector('.holder-scroll');
+var width = parseInt(holder.clientWidth, 10),
+	cldWidth = parseInt(holder.children[0].clientWidth, 10),
+	distance = cldWidth - width,
+	mean = 40, 
+	current = 0; 
+	//holder.children[0].style.transform = 'translateX('+current+'px)'; 
+	$('.holder-scroll').scrollLeft(current);
+
+	var doScroll = function (e) {
+		e = window.event || e;
+		var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+		if ((delta == -1 && current * mean >= -distance) || (delta == 1 && current * mean < 0)) {
+			current = current + delta;
+		}
+		//holder.children[0].style.transform = (current * mean) + 'px';
+		//holder.children[0].style.transform = 'translateX('+(current * mean)+'px)';
+		var go = current * mean;
+		$('.holder-scroll').scrollLeft(-go);
+		e.preventDefault();
+	};
+if (holder.addEventListener) {
+	holder.addEventListener("mousewheel", doScroll, false);
+	holder.addEventListener("DOMMouseScroll", doScroll, false);
+} else {
+	holder.attachEvent("onmousewheel", doScroll);
+}
+//scroll events horizontal
+
