@@ -821,6 +821,10 @@
 		height: 26px;
 		display: inline-block;
 	}
+	img {
+		width: 26px;
+		height: 26px;
+	}
 }
 .tab-content {
 	padding:10px;
@@ -1010,11 +1014,12 @@
 	clear: both;
 	position: relative;
 	display: flex;
+	width: 100%;
+	overflow: hidden;
 	h3 {
 		margin-top: 0;
 	}
 	.holder-no-scroll {
-		
 	}
 	.inner {
 		position: relative;
@@ -1026,17 +1031,17 @@
 		vertical-align: middle;
 	}
 	.item-category-table {
-
 		width: 250px;
 		.offset-prop {
-			
 			.rc;
 		}
 	}
 	.holder-scroll {
 		width: 100%;
+		height: 100%;
 		overflow-y: hidden;
 		overflow-x: auto;
+		position: relative;
 	}
 	table {
 		.btn {
@@ -1163,4 +1168,17 @@
 hr {
 	margin-bottom: 10px;
 	margin-top: 10px;
+}
+.category-flexed {
+	display: flex;
+	&>.row {
+		display: flex;
+		width: 100%;
+		&>div {
+			display: flex;
+			&>div {
+				width: 100%;
+			}
+		}
+	}
 }
